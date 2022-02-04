@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 import discord
 
-from core.bot import DSCBot
+from core.bot import GDSCBot
 
-bot = DSCBot()
+bot = GDSCBot()
 
 class Guild(BaseModel):
     guild: discord.Guild

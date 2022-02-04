@@ -9,7 +9,7 @@ load_dotenv()
 
 
 @singleton
-class DSCBot(commands.Bot):
+class GDSCBot(commands.Bot):
     def __init__(self, *args, **kwargs):
         if 'command_prefix' not in kwargs:
             kwargs['command_prefix'] = '!'

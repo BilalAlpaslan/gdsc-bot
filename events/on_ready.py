@@ -1,8 +1,8 @@
 
 import discord
-from core.bot import DSCBot
+from core.bot import GDSCBot
 
-bot = DSCBot()
+bot = GDSCBot()
 
 
 async def on_ready():
