@@ -1,8 +1,8 @@
 
-from core.bot import get_bot
+from core.bot import DSCBot
 from models.guild import get_or_create_guild
 
-bot = get_bot()
+bot = DSCBot()
 
 
 async def open_ticket(ctx, *args):

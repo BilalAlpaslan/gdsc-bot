@@ -1,8 +1,8 @@
 
 import discord
-from core.bot import get_bot
+from core.bot import DSCBot
 
-bot = get_bot()
+bot = DSCBot()
 
 
 async def on_ready():

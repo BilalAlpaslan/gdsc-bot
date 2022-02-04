@@ -1,19 +1,12 @@
-import os
-from unicodedata import name
 
-from dotenv import load_dotenv
-
+from commands.open_ticket import open_ticket
 from commands.welcome_channel import welcome_channel
 from commands.welcome_message import welcome_message
-from commands.open_ticket import open_ticket
-from commands.slash import _test
-from core.bot import get_bot, get_slash
+from core.bot import DSCBot
 from events.on_member_join import on_member_join
 from events.on_ready import on_ready
 
-load_dotenv()
-bot = get_bot()
-slash = get_slash()
+bot = DSCBot()
 
 bot.event(on_ready)
 bot.event(on_member_join)
@@ -34,9 +27,6 @@ bot.command(
     help='Open a ticket'
 )(open_ticket)
 
-slash.slash(name='test')(_test)
-
 
 def main():
-    TOKEN = os.getenv('DISCORD_TOKEN')
-    bot.run(TOKEN)
+    bot.run()

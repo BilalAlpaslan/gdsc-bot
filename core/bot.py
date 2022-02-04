@@ -1,15 +1,22 @@
+import os
+
 import discord
 from discord.ext import commands
-from discord_slash import SlashCommand
+from dotenv import load_dotenv
+from helper.singleton import singleton
 
-intents = discord.Intents.all()
-bot = commands.Bot(command_prefix='!', intents=intents)
-slash = SlashCommand(bot)
-
-
-def get_slash() -> SlashCommand:
-    return slash
+load_dotenv()
 
 
-def get_bot() -> commands.Bot:
-    return bot
+@singleton
+class DSCBot(commands.Bot):
+    def __init__(self, *args, **kwargs):
+        if 'command_prefix' not in kwargs:
+            kwargs['command_prefix'] = '!'
+        if 'intents' not in kwargs:
+            kwargs['intents'] = discord.Intents.all()
+        super().__init__(*args, **kwargs)
+
+    def run(self, *args, **kwargs):
+        token = os.getenv('DISCORD_TOKEN')
+        super().run(token, *args, **kwargs)
