@@ -1,5 +1,4 @@
-discord.py==1.7.3
+discord.py
 pydantic==1.8.2
 python-dotenv
 watchgod
-slash-command

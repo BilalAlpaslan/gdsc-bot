@@ -1,5 +1,7 @@
 
 from commands.open_ticket import open_ticket
+from commands.set_moderate_tag import set_moderate_tag
+from commands.set_ticket_channel import set_ticket_channel
 from commands.welcome_channel import welcome_channel
 from commands.welcome_message import welcome_message
 from core.bot import GDSCBot
@@ -26,6 +28,16 @@ bot.command(
     name='openTicket',
     help='Open a ticket'
 )(open_ticket)
+
+bot.command(
+    name='setTicketChannel',
+    help='Set the channel for the ticket button'
+)(set_ticket_channel)
+
+bot.command(
+    name='setModerateTag',
+    help='Set the tag for the ticket button'
+)(set_moderate_tag)
 
 
 def main():
