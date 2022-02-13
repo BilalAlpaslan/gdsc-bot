@@ -1,4 +1,3 @@
-from itertools import count
 import discord
 from models.guild import get_or_create_guild, open_ticket
 
