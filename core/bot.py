@@ -8,7 +8,8 @@ from helper.singleton import singleton
 load_dotenv()
 
 INITIAL_EXTENSIONS = [
-    'cogs.example'
+    'cogs.example',
+    'cogs.reaction'
 ]
 
 
