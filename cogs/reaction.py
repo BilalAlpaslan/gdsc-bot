@@ -8,10 +8,10 @@ import uuid
 reaction_roles_data = {}
 
 try:
-    with open("reaction_roles.json", encoding="utf8") as file:
+    with open("data/reaction_roles.json", encoding="utf8") as file:
         reaction_roles_data = json.load(file)
 except (FileNotFoundError, json.JSONDecodeError):
-    with open("reaction_roles.json", "w") as file:
+    with open("data/reaction_roles.json", "w") as file:
         json.dump({}, file)
 
 
