@@ -17,7 +17,7 @@ except (FileNotFoundError, json.JSONDecodeError):
 
 @atexit.register
 def store_reaction_roles():
-    with open("reaction_roles.json", "w", encoding="utf8") as file:
+    with open("data/reaction_roles.json", "w", encoding="utf8") as file:
         json.dump(reaction_roles_data, file)
 
 
