@@ -5,5 +5,4 @@ services:
       dockerfile: ./Dockerfile
     container_name: bot
     restart: always
-    env_file: ./.env
 version: "3.4"
