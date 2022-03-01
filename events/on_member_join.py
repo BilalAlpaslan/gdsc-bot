@@ -46,5 +46,6 @@ async def on_member_join(member: discord.Member):
             
             if invite.code == "AAGYg2gC5Z":
                 await member.add_roles(member.guild.get_role(938504866484080680))
-
+            if invite.code == "wzcYmbje":
+                await member.add_roles(member.guild.get_role(938505554630938624))
             return
