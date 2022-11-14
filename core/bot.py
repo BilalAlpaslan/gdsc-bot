@@ -20,15 +20,21 @@ class GDSCBot(commands.Bot):
             kwargs['command_prefix'] = '!'
 
         if 'intents' not in kwargs:
-            kwargs['intents'] = discord.Intents.all()
+            intents = discord.Intents.all()
+            intents.message_content = True
+            intents.members = True
+            intents.typing = True
+            intents.presences = True
+            kwargs['intents'] = intents
+
+        # for extension in INITIAL_EXTENSIONS:
+        #     try:
+        #         self.load_extension(extension)
+        #     except Exception as e:
+        #         print(f'Failed to load extension {extension}. error: {e}')
 
         super().__init__(*args, **kwargs)
 
-        for extension in INITIAL_EXTENSIONS:
-            try:
-                self.load_extension(extension)
-            except Exception as e:
-                print(f'Failed to load extension {extension}. error: {e}')
 
     def run(self, *args, **kwargs):
         token = os.getenv('DISCORD_TOKEN')
